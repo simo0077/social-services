@@ -30,7 +30,7 @@
             </div>
 
         </div>
-
+        <br>
         <div class="p-5" style="background: #FFF5F5">
             <h2 class="sub-title text-center fw-bold " style="color: #E05C5C">Description du service</h2>
             <p class="fw-bold" style="color: #848484">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
