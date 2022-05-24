@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\demandeProtectionSocial;
 use Illuminate\Http\Request;
 
 class services extends Controller
@@ -17,11 +18,9 @@ class services extends Controller
     {
         return view('services');
     }
-    public function service($name){
-        if($name=="social-protection"){
-            return view('social-protection');
-        }
-    }
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -36,18 +35,15 @@ class services extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -58,7 +54,7 @@ class services extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -69,8 +65,8 @@ class services extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -81,7 +77,7 @@ class services extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

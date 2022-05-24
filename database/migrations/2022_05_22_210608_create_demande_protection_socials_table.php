@@ -17,13 +17,18 @@ class CreateDemandeProtectionSocialsTable extends Migration
             $table->id();
             $table->string("firstName");
             $table->string("lastName");
-            $table->string("cin");
+            $table->string("cin")->unique();
             $table->string("phone");
             $table->string("address");
             $table->enum("sexe",['male','female']);
             $table->string("city");
             $table->double("salary");
             $table->string("profession");
+            $table->enum("status",[-1,0,1,2])->default(0);
+            $table->string("imagecin");
+
+
+
             $table->timestamps();
         });
     }
