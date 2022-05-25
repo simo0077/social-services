@@ -5,7 +5,7 @@
  */
 
 require('./bootstrap');
-import axios from 'axios';
+
 window.Vue = require('vue').default;
 
 /**
@@ -21,8 +21,9 @@ window.Vue = require('vue').default;
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('nav-bar', require('./components/NavBar.vue').default);
-Vue.component('social-protection-form', require('./components/SocialProtectionForm.vue').default);
 Vue.component('services', require('./components/Services.vue').default);
+Vue.component('social-protection-form', require('./components/SocialProtectionForm.vue').default);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

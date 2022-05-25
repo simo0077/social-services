@@ -22,3 +22,11 @@ Route::prefix('/services')->group(function(){
     Route::post('/social-protection/create', [\App\Http\Controllers\services\ProtectionSocialController::class, 'store'])->name('store');
 });
 
+
+Auth::routes();
+
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin/admin');
+Route::prefix('/admin')->group(function(){
+    Route::get('/social-protection', [\App\Http\Controllers\AdminController::class, 'socialProtection'])->name('admin-social-protection');
+    Route::post('/social-protection/create', [\App\Http\Controllers\services\ProtectionSocialController::class, 'store'])->name('store');
+});
