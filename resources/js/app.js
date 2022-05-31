@@ -7,6 +7,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue').default;
+import $ from 'jquery';
 
 /**
  * The following block of code may be used to automatically register your
@@ -23,6 +24,8 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('nav-bar', require('./components/NavBar.vue').default);
 Vue.component('services', require('./components/Services.vue').default);
 Vue.component('social-protection-form', require('./components/SocialProtectionForm.vue').default);
+Vue.component('social-protection-modal', require('./components/admin/SocialProtectionModal').default);
+Vue.component('social-protection-table', require('./components/admin/SocialProtectionTable').default);
 
 
 /**
