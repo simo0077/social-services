@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/services', [\App\Http\Controllers\services::class, 'index'])->name('services');
+Route::get('/suivie', [\App\Http\Controllers\suivieController::class, 'index'])->name('suivie');
 Route::prefix('/services')->group(function(){
     Route::get('/social-protection', [\App\Http\Controllers\services\ProtectionSocialController::class, 'index'])->name('social-protection');
     Route::post('/social-protection/create', [\App\Http\Controllers\services\ProtectionSocialController::class, 'store'])->name('store');

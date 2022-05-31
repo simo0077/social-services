@@ -86,6 +86,16 @@
                                        disabled>
                             </div>
                         </div>
+                        <br>
+                        <div class="row">
+                            <div class="form-group col">
+                                <a class="btn btn-primary consulter"  :href="/storage/+demande.imagecin" download>
+                                    dowload cin image
+                                </a>
+                            </div>
+
+
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -96,6 +106,20 @@
         </div>
     </div>
 </template>
+<style>
+.consulter:hover {
+    background: #FF8D8D;
+
+}
+
+.consulter {
+    background: #FAB9B9;
+    border: 0px;
+    color:#890000;
+    border-radius: 20px;
+    box-shadow: 1px 2px grey;
+}
+</style>
 <script>
 export default {
     props: ['demande'],

@@ -68,6 +68,12 @@
                            placeholder=""
                            required>
                 </div>
+                <div class="col">
+                    <label class="form-label" for="inputAddress">Date de naissance:</label>
+                    <input name="birthday" type="date" class="form-control" id="inputAddress"
+                           placeholder=""
+                           required>
+                </div>
             </div>
             <br>
             <div class="row">

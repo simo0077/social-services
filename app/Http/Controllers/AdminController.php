@@ -28,6 +28,7 @@ class AdminController extends Controller
     }
     public function socialProtection(){
         $demandes = demandeProtectionSocial::all();
+
         return view('admin.social-protection',compact('demandes'));
     }
 }

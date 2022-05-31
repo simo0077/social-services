@@ -22,7 +22,7 @@
         <!-- Main Page Content -->
         <div>
             <br>
-            <div class="row">
+            <div class="row mt-5">
                 <div class="col-4 offset-1">
 
                     <h1><b>Veuillez le choisir le <span style="color:#E05C5C ">service</span> que vous souhaitez </b>

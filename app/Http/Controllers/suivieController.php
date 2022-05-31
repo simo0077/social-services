@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\services;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\demandeProtectionSocial;
 use Illuminate\Http\Request;
 
-class ProtectionSocialController extends Controller
+class suivieController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,8 @@ class ProtectionSocialController extends Controller
      */
     public function index()
     {
-        return view('services.social-protection');
+        $demandes = demandeProtectionSocial::all();
+        return view('suivie',compact('demandes'));
 
     }
 
@@ -37,26 +37,7 @@ class ProtectionSocialController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'firstname' => 'required',
-            'lastname' => 'required',
-            'cin' => ['required','unique:demande_protection_socials'],
-            'sexe' => 'required',
-            'address' => 'required',
-            'phone' => 'required',
-            'city' => 'required',
-            'profession' => 'required',
-            'birthday'=>'required|before_or_equal:2002-01-01',
-            'salary' => ['required','lt:3000'],
-            'imagecin' => ['required','image']
-        ]);
-        //demandeProtectionSocial::create($data);
-
-        $imagePath=request('imagecin')->store('uploads/social-protection','public');
-        $data['imagecin'] = $imagePath;
-        demandeProtectionSocial::create($data);
-        $success = true;
-        return redirect()->route('social-protection')->with( ['success' => $success] );
+        //
     }
 
     /**

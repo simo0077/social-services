@@ -22,6 +22,7 @@ class CreateDemandeProtectionSocialsTable extends Migration
             $table->string("address");
             $table->enum("sexe",['male','female']);
             $table->string("city");
+            $table->date("birthday");
             $table->double("salary");
             $table->string("profession");
             $table->enum("status",[-1,0,1,2])->default(0);
