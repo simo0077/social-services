@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('/servicesApi/socialprotection/{id}',[\App\Http\Controllers\ServicesApiController::class,'socialProtectionApi']);
+Route::post('/services/social-protection',[\App\Http\Controllers\services\ProtectionSocialController::class,'updateStatusApi']);
+Route::post('/servicesApi/familialprotection/{id}',[\App\Http\Controllers\ServicesApiController::class,'familialProtectionApi']);
+Route::post('/services/familial-protection',[\App\Http\Controllers\services\ProtectionFamilialeController::class,'updateStatusApi']);
+Route::post('/suivie/search',[\App\Http\Controllers\suivieController::class,'search']);

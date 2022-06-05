@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-4 mb-5">
                 <br><br>
-                <h1><b>Service de <span style="color:#E05C5C">protection sociale</span></b></h1>
+                <h1><b><span style="color:#E05C5C">Familial protection</span> service</b></h1>
             </div>
             <hr>
 

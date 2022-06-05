@@ -21,6 +21,9 @@ Route::get('/suivie', [\App\Http\Controllers\suivieController::class, 'index'])-
 Route::prefix('/services')->group(function(){
     Route::get('/social-protection', [\App\Http\Controllers\services\ProtectionSocialController::class, 'index'])->name('social-protection');
     Route::post('/social-protection/create', [\App\Http\Controllers\services\ProtectionSocialController::class, 'store'])->name('store');
+    Route::get('/familial-protection', [\App\Http\Controllers\services\ProtectionFamilialeController::class, 'index'])->name('familial-protection');
+    Route::post('/familial-protection/create', [\App\Http\Controllers\services\ProtectionFamilialeController::class, 'store'])->name('store');
+
 });
 
 
@@ -29,5 +32,6 @@ Auth::routes();
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin/admin');
 Route::prefix('/admin')->group(function(){
     Route::get('/social-protection', [\App\Http\Controllers\AdminController::class, 'socialProtection'])->name('admin-social-protection');
-    Route::post('/social-protection/create', [\App\Http\Controllers\services\ProtectionSocialController::class, 'store'])->name('store');
+    Route::get('/familial-protection', [\App\Http\Controllers\AdminController::class, 'familalProtection'])->name('admin-familial-protection');
+
 });

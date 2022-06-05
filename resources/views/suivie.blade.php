@@ -37,44 +37,14 @@
         </div>
         <br>
         <br><br>
-        <div class="p-5" style="background: #FFF5F5">
-            <h2 class="sub-title text-center fw-bold " style="color: #E05C5C">Vos demandes</h2>
-            <hr>
-            <form>
-                <div class="row">
-                    <div class="col-6">
-                        <p class="h5">Veuillez entrer votre cin, numero de téléphone et date de naissance</p>
-                    </div>
-                    <div class="col-6">
-
-                        <div class="mb-3">
-                            <input name="cin" type="text" class="form-control" id="exampleInputEmail1"
-                                   aria-describedby="emailHelp">
-                        </div>
-                        <div class="mb-3">
-                            <input name="birthday" type="date" class="form-control" id="exampleInputPassword1">
-                        </div>
-
-                    </div>
-                </div>
-                <div class="text-center mt-3">
-                    <button type="submit" class="btn btn-lg  btn-outline-danger">Chercher</button>
-                </div>
-            </form>
-            <hr>
-            <br>
-            @foreach($demandes as $demande)
-                <div><demande-card :demande="{{json_encode($demande)}}"/></div>
-
-                <br>
-            @endforeach
-
-        </div>
+        <suivie/>
 
 
     </div>
 </div>
 </body>
+<script>
 
+</script>
 </html>
 

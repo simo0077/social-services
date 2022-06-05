@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\demandeProtectionFamiliale;
 use App\Models\demandeProtectionSocial;
 use Illuminate\Http\Request;
 
@@ -31,4 +32,10 @@ class AdminController extends Controller
 
         return view('admin.social-protection',compact('demandes'));
     }
+    public function familalProtection(){
+    $demandes = demandeProtectionFamiliale::all();
+
+    return view('admin.familial-protection',compact('demandes'));
+}
+
 }

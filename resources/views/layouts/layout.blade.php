@@ -49,7 +49,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline"
+                                    <a href="/admin/familial-protection" class="nav-link px-0"> <span class="d-none d-sm-inline"
                                                                              style="color: #A16957">Familial Protection</span>
                                     </a>
                                 </li>

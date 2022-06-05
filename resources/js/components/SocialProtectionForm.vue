@@ -70,7 +70,7 @@
                 </div>
                 <div class="col">
                     <label class="form-label" for="inputAddress">Date de naissance:</label>
-                    <input name="birthday" type="date" class="form-control" id="inputAddress"
+                    <input name="birthday" type="date"  max="2002-01-01"class="form-control" id="inputAddress"
                            placeholder=""
                            required>
                 </div>

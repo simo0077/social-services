@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\demandeProtectionSocial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class suivieController extends Controller
 {
@@ -14,8 +15,17 @@ class suivieController extends Controller
      */
     public function index()
     {
-        $demandes = demandeProtectionSocial::all();
-        return view('suivie',compact('demandes'));
+        return view('suivie');
+
+    }
+    public function search(Request $request)
+    {
+        $cin = $request -> cin;
+        $birthday = $request -> birthday;
+        $demandes_social_protection = DB::select('select * from demande_protection_socials  where cin = :cin and birthday  = :birthday', ['cin' => $cin,'birthday'=>$birthday]);;
+        $demandes_familial_protection = DB::select('select * from demande_protection_familiales  where cin = :cin and birthday  = :birthday', ['cin' => $cin,'birthday'=>$birthday]);;
+        $demandes=array("demandes_social_protection"=>$demandes_social_protection,"demandes_familial_protection"=>$demandes_familial_protection);
+        return $demandes;
 
     }
 

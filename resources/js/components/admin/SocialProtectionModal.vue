@@ -8,6 +8,10 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <div class="alert" :class="{ 'alert-success': demande.status==2, 'alert-warning': demande.status==1,'alert-danger': demande.status==-1 }" role="alert">
+                        <Strong>{{demande.message}}</Strong>
+                    </div>
+                    <hr>
                     <form>
                         <div class="row">
                             <div class="col">
@@ -31,20 +35,8 @@
 
                             <div class="col ">
                                 <label class="form-label">Sexe:</label>
-                                <br>
-                                <div class="form-check form-check-inline ">
-                                    <input v-model="demande.sexe" name="sexe" class="form-check-input" type="radio"
-                                           id="inlineRadio1"
-                                           value="male">
-                                    <label class="form-check-label" for="inlineRadio1">Male</label>
-                                </div>
-
-                                <div class="form-check form-check-inline ">
-                                    <input v-model="demande.sexe" name="sexe" class="form-check-input" type="radio"
-                                           id="inlineRadio2"
-                                           value="Female">
-                                    <label class="form-check-label" for="inlineRadio2">Femelle</label>
-                                </div>
+                                <input v-model="demande.sexe" name="sexe" type="text" class="form-control" id="inputAddress" placeholder=""
+                                       disabled>
 
 
                             </div>
@@ -67,6 +59,12 @@
                             <div class="col">
                                 <label class="form-label" for="inputAddress">Addresse:</label>
                                 <input v-model="demande.address" name="address" type="text" class="form-control" id="inputAddress"
+                                       placeholder=""
+                                       disabled>
+                            </div>
+                            <div class="col">
+                                <label class="form-label" for="inputAddress">Date de naissance:</label>
+                                <input v-model="demande.birthday" type="text" class="form-control" id="inputAddress"
                                        placeholder=""
                                        disabled>
                             </div>

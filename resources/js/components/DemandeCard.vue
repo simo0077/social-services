@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="p-4" style="background: #FFEAEA; border-radius: 30px;box-shadow: 5px 10px #FFBFBF">
+        <div class="p-4" :class="{ 'card-success': demande.status==2, 'card-warning': demande.status==1,'card-danger': demande.status==-1 || demande.status==0 }" style=" border-radius: 30px;">
             <table class="table table-borderless">
                 <thead>
                 <tr>
@@ -13,8 +13,8 @@
                 <tr>
 
                     <td><strong>{{ demande.id }}</strong></td>
-                    <td><strong>Protection social</strong></td>
-                    <td><strong style="color:orange">{{ status }}</strong></td>
+                    <td><strong>{{demande_type}}</strong></td>
+                    <td><strong :class="{ 'success': demande.status==2, 'warning': demande.status==1,'danger': demande.status==-1 }">{{ status }}</strong></td>
                 </tr>
 
                 </tbody>
@@ -53,12 +53,33 @@
     border-radius: 20px;
     box-shadow: 1px 2px grey;
 }
+.success{
+    color : #1CB70E;
+}
+.warning{
+    color : #E19016;
+}
+.danger{
+    color : #FF1A1A;
+}
+.card-success{
+    box-shadow: 5px 10px #65B96D;
+    background: #D6FFDA;
+}
+.card-danger{
+    box-shadow: 5px 10px #FFBFBF;
+    background: #FFEAEA;
+}
+.card-warning{
+    box-shadow: 5px 10px #C89952;
+    background: #FFF0D9;
+}
 
 
 </style>
 <script>
 export default {
-    props: ["demande"],
+    props: ["demande","demande_type"],
     data() {
         return {
             status: 'Non traité'

@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\services;
 
 use App\Http\Controllers\Controller;
+use App\Models\demandeProtectionFamiliale;
 use App\Models\demandeProtectionSocial;
 use Illuminate\Http\Request;
 
-class ProtectionSocialController extends Controller
+class ProtectionFamilialeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,7 @@ class ProtectionSocialController extends Controller
      */
     public function index()
     {
-        return view('services.social-protection');
+        return view('services.familial-protection');
 
     }
 
@@ -24,10 +25,7 @@ class ProtectionSocialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -52,15 +50,15 @@ class ProtectionSocialController extends Controller
         ]);
         //demandeProtectionSocial::create($data);
 
-        $imagePath=request('imagecin')->store('uploads/social-protection','public');
+        $imagePath=request('imagecin')->store('uploads/familial-protection','public');
         $data['imagecin'] = $imagePath;
-        demandeProtectionSocial::create($data);
+        demandeProtectionFamiliale::create($data);
         $success = true;
-        return redirect()->route('social-protection')->with( ['success' => $success] );
+        return redirect()->route('familial-protection')->with( ['success' => $success] );
     }
     public function updateStatus($request){
         $demande = $request['demande'];
-        $newDemande = demandeProtectionSocial::find($demande['id']);
+        $newDemande = demandeProtectionFamiliale::find($demande['id']);
         $newDemande -> status = $demande['status'];
         $newDemande -> message = $demande['message'];
         $newDemande->save();
@@ -68,12 +66,23 @@ class ProtectionSocialController extends Controller
     }
     public function updateStatusApi(Request $request){
         $demande = $request->demande;
-        $newDemande = demandeProtectionSocial::find($demande['id']);
+        $newDemande = demandeProtectionFamiliale::find($demande['id']);
         $newDemande -> status = $demande['status'];
         $newDemande -> message = $demande['message'];
         $newDemande->save();
         return $newDemande;
     }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
 
     /**
      * Display the specified resource.
