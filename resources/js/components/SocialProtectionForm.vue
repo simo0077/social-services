@@ -31,7 +31,7 @@
                     <div class="form-check form-check-inline ">
                         <input name="sexe" class="form-check-input" type="radio"
                                id="inlineRadio1"
-                               value="male">
+                               value="male" checked>
                         <label class="form-check-label" for="inlineRadio1">Male</label>
                     </div>
 

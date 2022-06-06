@@ -5,6 +5,7 @@ namespace App\Http\Controllers\services;
 use App\Http\Controllers\Controller;
 use App\Models\demandeProtectionSocial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProtectionSocialController extends Controller
 {
