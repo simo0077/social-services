@@ -26,6 +26,7 @@ Vue.component('services', require('./components/Services.vue').default);
 Vue.component('social-protection-form', require('./components/SocialProtectionForm.vue').default);
 Vue.component('demande-card', require('./components/DemandeCard.vue').default);
 Vue.component('suivie', require('./components/Suivie.vue').default);
+Vue.component('statistics', require('./components/Statistics.vue').default);
 
 
 //admin

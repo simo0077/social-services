@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\demandeProtectionFamiliale;
+use App\Models\demandeProtectionFamilialeArchived;
 use App\Models\demandeProtectionSocial;
 use App\Models\demandeProtectionSocialeArchived;
 use Illuminate\Console\Command;
@@ -59,7 +60,7 @@ class archiveDemands extends Command
         {
             $demande_archived = $demande->replicate();
             $demande_archived = $demande_archived->toArray();
-            demandeProtectionSocialeArchived::create($demande_archived);
+            demandeProtectionFamilialeArchived::create($demande_archived);
             $demande->delete();
             $this->info('Weekly report has been sent successfully');
 

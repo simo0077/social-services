@@ -1,45 +1,42 @@
 <template>
     <div class="p-5 mt-4" style="background: #FFF5F5">
-        <h2 class="sub-title text-center fw-bold " style="color: #E05C5C">Sommaire de Services</h2>
+        <h2 class="sub-title text-center fw-bold " style="color: #E05C5C">Services summary</h2>
         <br>
         <div class="row">
             <div class="col-sm-4">
-                <a class="card-link" href="/services/social-protection">
+                <a class="card-link" href="/services/social-protection" style=" text-decoration:none;">
                     <div class="card text-center">
-                        <div class="card-header fw-bold" style="background: #F8847D; color:white">Protection
-                            Sociale
+                        <div class="card-header fw-bold" style="background: #F8847D; color:white">Social Protection
+
                         </div>
                         <div class="card-body">
-                            <p class="card-text">With supporting text below as a natural lead-in to additional
-                                content.</p>
+                            <p class="card-text">Request your social protection card here!
+                                </p>
                         </div>
                     </div>
                 </a>
             </div>
 
             <div class="col-sm-4">
-                <a class="card-link" href="/services/familial-protection">
+                <a class="card-link" href="/services/familial-protection" style=" text-decoration:none;">
                     <div class="card text-center">
-                        <div class="card-header fw-bold" style="background: #F8847D; color:white">Protection
-                            Familiale
+                        <div class="card-header fw-bold" style="background: #F8847D; color:white">Familial Protection
+
                         </div>
                         <div class="card-body">
-                            <p class="card-text">With supporting text below as a natural lead-in to additional
-                                content.</p>
+                            <p class="card-text">Request your social protection card here!</p>
                         </div>
                     </div>
                 </a>
             </div>
 
             <div class="col-sm-4">
-                <a class="card-link" href="/services/3">
+                <a class="card-link" href="/services/3" style=" text-decoration:none;">
                     <div class="card text-center">
-                        <div class="card-header fw-bold" style="background: #F8847D; color:white">Bourses et
-                            Services Etudiants
+                        <div class="card-header fw-bold" style="background: #F8847D; color:white">Scholarships
                         </div>
                         <div class="card-body">
-                            <p class="card-text">With supporting text below as a natural lead-in to additional
-                                content.</p>
+                            <p class="card-text">Request your Scholarship here!</p>
                         </div>
                     </div>
                 </a>
@@ -48,10 +45,9 @@
 
         <div class="row mt-5">
             <div class="col-sm-4">
-                <a class="card-link" href="#">
+                <a class="card-link" href="#" style=" text-decoration:none;">
                     <div class="card text-center">
-                        <div class="card-header fw-bold" style="background: #F8847D; color:white">Services
-                            Médicaux
+                        <div class="card-header fw-bold" style="background: #F8847D; color:white">Medical Services
                         </div>
                         <div class="card-body">
                             <p class="card-text">With supporting text below as a natural lead-in to additional
@@ -62,10 +58,10 @@
             </div>
 
             <div class="col-sm-4">
-                <a class="card-link" href="#">
+                <a class="card-link" href="#" style=" text-decoration:none;">
                     <div class="card text-center">
-                        <div class="card-header fw-bold" style="background: #F8847D; color:white">Services
-                            Handicap
+                        <div class="card-header fw-bold" style="background: #F8847D; color:white">Handicap Services
+
                         </div>
                         <div class="card-body">
                             <p class="card-text">With supporting text below as a natural lead-in to additional
@@ -76,10 +72,10 @@
             </div>
 
             <div class="col-sm-4">
-                <a class="card-link" href="#">
+                <a class="card-link" href="#" style=" text-decoration:none;">
                     <div class="card text-center">
-                        <div class="card-header fw-bold" style="background: #F8847D; color:white">Services
-                            Employés
+                        <div class="card-header fw-bold" style="background: #F8847D; color:white">Employees Services
+
                         </div>
                         <div class="card-body">
                             <p class="card-text">With supporting text below as a natural lead-in to additional

@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\Controller::class,'index']);
 Route::get('/services', [\App\Http\Controllers\services::class, 'index'])->name('services');
 Route::get('/suivie', [\App\Http\Controllers\suivieController::class, 'index'])->name('suivie');
 Route::prefix('/services')->group(function(){

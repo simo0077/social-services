@@ -9,10 +9,10 @@
         <!-- NavBar Components -->
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" :class="[selected==='accueil'?'active':'']" href="/">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" :class="[selected==='accueil'?'active':'']" href="/">Welcome</a></li>
                 <li class="nav-item"><a class="nav-link" :class="[selected==='services'?'active':'']" href="/services">Services</a></li>
-                <li class="nav-item"><a class="nav-link" :class="[selected==='suivie'?'active':'']" href="/suivie">Suivi de demandes</a></li>
-                <li class="nav-item"><a class="nav-link" :class="[selected==='contact'?'active':'']" href="#">Contactez-nous</a> </li>
+                <li class="nav-item"><a class="nav-link" :class="[selected==='suivie'?'active':'']" href="/suivie">Follow-up of requests</a></li>
+                <li class="nav-item"><a class="nav-link" :class="[selected==='contact'?'active':'']" href="#">Contact us</a> </li>
             </ul>
         </div>
 
