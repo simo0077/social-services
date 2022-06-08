@@ -1,5 +1,5 @@
 <template>
-    <div class="modal fade " id="socialProtection" tabindex="-1" ref="socialProtection"
+    <div class="modal fade " id="bourse" tabindex="-1" ref="bourse"
          aria-hidden="true">
         <div class="modal-dialog modal-lg ">
             <div class="modal-content">
@@ -71,15 +71,22 @@
                         </div>
                         <br>
                         <div class="row">
-                            <div class="form-group col">
-                                <label class="form-label" for="inputRegion">Profession:</label>
-                                <input v-model="demande.profession" name="profession" type="text" class="form-control" id="inputAddress" placeholder=""
+                            <div class="form-group col-5">
+                                <label class="form-label" for="inputRegion">Ecole:</label>
+                                <input v-model="demande.school" type="text"  class="form-control" id="inputAddress"
+                                       placeholder=""
                                        disabled>
                             </div>
 
-                            <div class="col">
-                                <label class="form-label" for="inputAddress">Salaire:</label>
-                                <input v-model="demande.salary" name="salary" type="text" class="form-control" id="inputAddress"
+                            <div class="col-4">
+                                <label class="form-label" for="inputAddress">Salaire des parents combinés:</label>
+                                <input v-model="demande.parentsSalary" type="text" class="form-control" id="inputAddress"
+                                       placeholder=""
+                                       disabled>
+                            </div>
+                            <div class="col-3">
+                                <label class="form-label" for="inputAddress">Niveau d'étude:</label>
+                                <input v-model="demande.level" type="text" class="form-control" id="inputAddress"
                                        placeholder=""
                                        disabled>
                             </div>
@@ -91,6 +98,11 @@
                                     dowload cin image
                                 </a>
                             </div>
+                            <div class="form-group col">
+                                <a class="btn btn-primary consulter"  :href="/storage/+demande.pdfsalaryattestation" download>
+                                    dowload salary attestation
+                                </a>
+                            </div>
 
 
                         </div>
@@ -98,6 +110,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
                 </div>
             </div>
         </div>

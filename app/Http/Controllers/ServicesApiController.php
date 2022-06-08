@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\services\BourseController;
 use App\Http\Controllers\services\ProtectionFamilialeController;
 use App\Http\Controllers\services\ProtectionSocialController;
+use App\Models\demandeBourse;
 use App\Models\demandeProtectionFamiliale;
 use App\Models\demandeProtectionSocial;
 use Illuminate\Http\Request;
@@ -17,8 +19,8 @@ class ServicesApiController extends Controller
             $rand = rand(0,1);
             $status = $rand==0?'-1':'2';
             $demande['status'] = $status;
-            $message_error = "this document is incorrect missing please correct it";
-            $message_success=" please come take your social protection card from the x place";
+            $message_error = "This document is incorrect missing please correct it";
+            $message_success="Please come take your social protection card from the x place";
             $message = $rand==0 ? $message_error: $message_success;
             $demande['message'] = $message;
             $request = array('demande'=>$demande);
@@ -33,12 +35,28 @@ class ServicesApiController extends Controller
             $rand = rand(0,1);
             $status = $rand==0?'-1':'2';
             $demande['status'] = $status;
-            $message_error = "this document is incorrect missing please correct it";
-            $message_success=" please come take your famial protection card from the x place";
+            $message_error = "This document is incorrect missing please correct it";
+            $message_success="Please come take your famial protection card from the x place";
             $message = $rand==0 ? $message_error: $message_success;
             $demande['message'] = $message;
             $request = array('demande'=>$demande);
             $demande_returned =(new ProtectionFamilialeController)->updateStatus($request);
+            return $demande_returned;
+        }
+
+    }
+    public function bourseApi($id){
+        $demande = demandeBourse::find($id);
+        if($demande->status==1){
+            $rand = rand(0,1);
+            $status = $rand==0?'-1':'2';
+            $demande['status'] = $status;
+            $message_error = "Yhis document is incorrect missing please correct it";
+            $message_success="You are accepted for the scholarship, for more information please visit us on example.com";
+            $message = $rand==0 ? $message_error: $message_success;
+            $demande['message'] = $message;
+            $request = array('demande'=>$demande);
+            $demande_returned =(new BourseController)->updateStatus($request);
             return $demande_returned;
         }
 

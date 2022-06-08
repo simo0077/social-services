@@ -21,4 +21,6 @@ Route::post('/servicesApi/socialprotection/{id}',[\App\Http\Controllers\Services
 Route::post('/services/social-protection',[\App\Http\Controllers\services\ProtectionSocialController::class,'updateStatusApi']);
 Route::post('/servicesApi/familialprotection/{id}',[\App\Http\Controllers\ServicesApiController::class,'familialProtectionApi']);
 Route::post('/services/familial-protection',[\App\Http\Controllers\services\ProtectionFamilialeController::class,'updateStatusApi']);
+Route::post('/servicesApi/bourse/{id}',[\App\Http\Controllers\ServicesApiController::class,'bourseApi']);
+Route::post('/services/bourse',[\App\Http\Controllers\services\BourseController::class,'updateStatusApi']);
 Route::post('/suivie/search',[\App\Http\Controllers\suivieController::class,'search']);

@@ -31,7 +31,7 @@
             </div>
 
             <div class="col-sm-4">
-                <a class="card-link" href="/services/3" style=" text-decoration:none;">
+                <a class="card-link" href="/services/bourse" style=" text-decoration:none;">
                     <div class="card text-center">
                         <div class="card-header fw-bold" style="background: #F8847D; color:white">Scholarships
                         </div>

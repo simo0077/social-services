@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Models\demandeBourse;
+use App\Models\demandeBourseArchived;
 use App\Models\demandeProtectionFamiliale;
 use App\Models\demandeProtectionFamilialeArchived;
 use App\Models\demandeProtectionSocial;
@@ -43,27 +45,36 @@ class archiveDemands extends Command
      */
     public function handle()
     {
-        $demandes_social_protection =demandeProtectionSocial::where('status','-1')->get();
+        $demandes_social_protection = demandeProtectionSocial::where('status', '-1')->get();
 
-        foreach($demandes_social_protection as $demande)
-        {
+        foreach ($demandes_social_protection as $demande) {
             $demande_archived = $demande->replicate();
             $demande_archived = $demande_archived->toArray();
             demandeProtectionSocialeArchived::create($demande_archived);
             $demande->delete();
-            $this->info('Weekly report has been sent successfully');
+
 
         }
-        $demandes_familial_protection =demandeProtectionFamiliale::where('status','-1')->get();
+        $demandes_familial_protection = demandeProtectionFamiliale::where('status', '-1')->get();
 
-        foreach($demandes_familial_protection as $demande)
-        {
+        foreach ($demandes_familial_protection as $demande) {
             $demande_archived = $demande->replicate();
             $demande_archived = $demande_archived->toArray();
             demandeProtectionFamilialeArchived::create($demande_archived);
             $demande->delete();
-            $this->info('Weekly report has been sent successfully');
+
 
         }
+        $demandes_bourse = demandeBourse::where('status', '-1')->get();
+
+        foreach ($demandes_bourse as $demande) {
+            $demande_archived = $demande->replicate();
+            $demande_archived = $demande_archived->toArray();
+            demandeBourseArchived::create($demande_archived);
+            $demande->delete();
+
+
+        }
+        $this->info('Monthly cleanup has been done');
     }
 }

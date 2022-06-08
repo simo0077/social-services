@@ -66,7 +66,7 @@
                 <th scope="col" style="color: white">FirstName</th>
                 <th scope="col" style="color: white">LastName</th>
                 <th scope="col" style="color: white">Sexe</th>
-                <th scope="col" style="color: white">Profession</th>
+                <th scope="col" style="color: white">School</th>
                 <th scope="col" style="color: white">Status</th>
                 <th scope="col" style="color: white; width: 10%">Options</th>
             </tr>
@@ -79,7 +79,7 @@
                 <td>{{ demande.firstName }}</td>
                 <td>{{ demande.lastName }}</td>
                 <td>{{ demande.sexe }}</td>
-                <td>{{ demande.profession }}</td>
+                <td>{{ demande.school }}</td>
                 <td>{{ demande.status }}</td>
                 <td>
                     <div class="dropdown">
@@ -104,7 +104,7 @@
             </tbody>
         </table>
 
-        <social-protection-modal ref="socialProtection" :demande="demande"/>
+        <bourse-modal ref="bourse" :demande="demande"/>
 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -160,8 +160,8 @@ export default {
                 var cin = demande.cin.toLowerCase().match(this.search.toLowerCase());
                 var firstName = demande.firstName.toLowerCase().match(this.search.toLowerCase());
                 var lastName = demande.lastName.toLowerCase().match(this.search.toLowerCase());
-                var profession = demande.profession.toLowerCase().match(this.search.toLowerCase());
-                if(firstName || cin ||lastName || profession){
+                var school = demande.school.toLowerCase().match(this.search.toLowerCase());
+                if(firstName || cin ||lastName || school){
                     return true;
                 }
 
@@ -171,7 +171,7 @@ export default {
     methods: {
         async showDetails(index) {
             this.demande = this.demandes[index];
-            this.showModal("socialProtection");
+            this.showModal("bourse");
         },
         showModal: function (element) {
             var element = this.$refs[element].$el;
@@ -185,7 +185,7 @@ export default {
             demande.status='1';
             demande.message='Votre demande est en cours de traitement';
             console.log(demande)
-            axios.post('/api/services/social-protection', {
+            axios.post('/api/services/bourse', {
                 demande : demande
             }).then(response=>{
                 this.$forceUpdate();
@@ -194,7 +194,7 @@ export default {
         reject(demande){
             demande.status='-1';
             demande.message=this.message;
-            axios.post('/api/services/social-protection', {
+            axios.post('/api/services/bourse', {
                 demande : demande
             }).then(response=>{
                 this.$forceUpdate();

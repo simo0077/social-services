@@ -29,11 +29,14 @@
 
 
         <div v-for="(demande, index) in demandes.demandes_social_protection">
-            <demande-card :demande="demande" :demande_type="'Social protection'"/>
+            <demande-card :demande="demande" :demande_type="'Social protection'" :type="'socialProtection'"/>
         </div>
         <br>
         <div v-for="(demande, index) in demandes.demandes_familial_protection">
-            <demande-card :demande="demande" :demande_type="'Familial protection'"/>
+            <demande-card :demande="demande" :demande_type="'Familial protection'" :type="'socialProtection'"/>
+        </div>
+        <div v-for="(demande, index) in demandes.demandes_bourse">
+            <demande-card :demande="demande" :demande_type="'Scholarship'" :type="'bourse'"/>
         </div>
         <br>
 

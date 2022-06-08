@@ -20,12 +20,13 @@
                 </tbody>
             </table>
             <div class="text-center">
-                <button id="consulter" class="btn btn-lg  btn-danger consulter" @click="showDetails()"><Strong
+                <button id="consulter" class="btn btn-lg  btn-danger consulter" @click="showDetails(type)"><Strong
                     style=" color:#890000">Consulter</Strong>
                 </button>
             </div>
         </div>
         <social-protection-modal ref="socialProtection" :demande="demande"/>
+        <bourse-modal ref="bourse" :demande="demande"/>
     </div>
 </template>
 <style lang="scss">
@@ -79,7 +80,7 @@
 </style>
 <script>
 export default {
-    props: ["demande","demande_type"],
+    props: ["demande","demande_type","type"],
     data() {
         return {
             status: 'Non traité'
@@ -95,8 +96,9 @@ export default {
         }
     },
     methods: {
-        async showDetails() {
-            this.showModal("socialProtection");
+        async showDetails(type) {
+
+            this.showModal(type);
         },
         showModal: function (element) {
             var element = this.$refs[element].$el;

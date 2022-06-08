@@ -185,7 +185,7 @@ export default {
             demande.status='1';
             demande.message='Votre demande est en cours de traitement';
             console.log(demande)
-            axios.post('/api/services/social-protection', {
+            axios.post('/api/services/familial-protection', {
                 demande : demande
             }).then(response=>{
                 this.$forceUpdate();
@@ -194,7 +194,7 @@ export default {
         reject(demande){
             demande.status='-1';
             demande.message=this.message;
-            axios.post('/api/services/social-protection', {
+            axios.post('/api/services/familial-protection', {
                 demande : demande
             }).then(response=>{
                 this.$forceUpdate();

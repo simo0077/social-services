@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\demandeBourse;
 use App\Models\demandeProtectionFamiliale;
 use App\Models\demandeProtectionSocial;
 use Illuminate\Http\Request;
@@ -27,15 +28,25 @@ class AdminController extends Controller
     {
         return view('admin.admin');
     }
-    public function socialProtection(){
+
+    public function socialProtection()
+    {
         $demandes = demandeProtectionSocial::all();
 
-        return view('admin.social-protection',compact('demandes'));
+        return view('admin.social-protection', compact('demandes'));
     }
-    public function familalProtection(){
-    $demandes = demandeProtectionFamiliale::all();
 
-    return view('admin.familial-protection',compact('demandes'));
-}
+    public function familialProtection()
+    {
+        $demandes = demandeProtectionFamiliale::all();
+
+        return view('admin.familial-protection', compact('demandes'));
+    }
+    public function bourse()
+    {
+        $demandes = demandeBourse::all();
+
+        return view('admin.bourse', compact('demandes'));
+    }
 
 }

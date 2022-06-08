@@ -23,8 +23,9 @@ class suivieController extends Controller
         $cin = $request -> cin;
         $birthday = $request -> birthday;
         $demandes_social_protection = DB::select('select * from demande_protection_socials  where cin = :cin and birthday  = :birthday', ['cin' => $cin,'birthday'=>$birthday]);;
+        $demandes_bourse = DB::select('select * from demande_bourses  where cin = :cin and birthday  = :birthday', ['cin' => $cin,'birthday'=>$birthday]);;
         $demandes_familial_protection = DB::select('select * from demande_protection_familiales  where cin = :cin and birthday  = :birthday', ['cin' => $cin,'birthday'=>$birthday]);;
-        $demandes=array("demandes_social_protection"=>$demandes_social_protection,"demandes_familial_protection"=>$demandes_familial_protection);
+        $demandes=array("demandes_social_protection"=>$demandes_social_protection,"demandes_familial_protection"=>$demandes_familial_protection,"demandes_bourse"=>$demandes_bourse);
         return $demandes;
 
     }

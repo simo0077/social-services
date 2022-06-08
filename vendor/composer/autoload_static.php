@@ -526,6 +526,7 @@ class ComposerStaticInitabb47d46f2116c8e12bc2a53b0bf93fa
     );
 
     public static $classMap = array (
+        'App\\Console\\Commands\\archiveDemands' => __DIR__ . '/../..' . '/app/Console/Commands/archiveDemands.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
@@ -535,6 +536,7 @@ class ComposerStaticInitabb47d46f2116c8e12bc2a53b0bf93fa
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
+        'App\\Http\\Controllers\\BourseController' => __DIR__ . '/../..' . '/app/Http/Controllers/BourseController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\ServicesApiController' => __DIR__ . '/../..' . '/app/Http/Controllers/ServicesApiController.php',
         'App\\Http\\Controllers\\services' => __DIR__ . '/../..' . '/app/Http/Controllers/services.php',
@@ -551,6 +553,8 @@ class ComposerStaticInitabb47d46f2116c8e12bc2a53b0bf93fa
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\demandeBourse' => __DIR__ . '/../..' . '/app/Models/demandeBourse.php',
+        'App\\Models\\demandeBourseArchived' => __DIR__ . '/../..' . '/app/Models/demandeBourseArchived.php',
         'App\\Models\\demandeProtectionFamiliale' => __DIR__ . '/../..' . '/app/Models/demandeProtectionFamiliale.php',
         'App\\Models\\demandeProtectionFamilialeArchived' => __DIR__ . '/../..' . '/app/Models/demandeProtectionFamilialeArchived.php',
         'App\\Models\\demandeProtectionSocial' => __DIR__ . '/../..' . '/app/Models/demandeProtectionSocial.php',

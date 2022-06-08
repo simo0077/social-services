@@ -21,6 +21,8 @@ Route::prefix('/services')->group(function(){
     Route::post('/social-protection/create', [\App\Http\Controllers\services\ProtectionSocialController::class, 'store'])->name('store');
     Route::get('/familial-protection', [\App\Http\Controllers\services\ProtectionFamilialeController::class, 'index'])->name('familial-protection');
     Route::post('/familial-protection/create', [\App\Http\Controllers\services\ProtectionFamilialeController::class, 'store'])->name('store');
+    Route::get('/bourse', [\App\Http\Controllers\services\BourseController::class, 'index'])->name('bourse');
+    Route::post('/bourse/create', [\App\Http\Controllers\services\BourseController::class, 'store'])->name('store');
 
 });
 
@@ -30,6 +32,7 @@ Auth::routes();
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin/admin');
 Route::prefix('/admin')->group(function(){
     Route::get('/social-protection', [\App\Http\Controllers\AdminController::class, 'socialProtection'])->name('admin-social-protection');
-    Route::get('/familial-protection', [\App\Http\Controllers\AdminController::class, 'familalProtection'])->name('admin-familial-protection');
+    Route::get('/familial-protection', [\App\Http\Controllers\AdminController::class, 'familialProtection'])->name('admin-familial-protection');
+    Route::get('/bourse', [\App\Http\Controllers\AdminController::class, 'bourse'])->name('admin-bourse');
 
 });

@@ -77,18 +77,25 @@
             </div>
             <br>
             <div class="row">
-                <div class="form-group col">
-                    <label class="form-label" for="inputRegion">Profession:</label>
-                    <select name="profession" id="inputRegion" class="form-select" >
-                        <option v-for="profession in professions" :value="profession">{{ profession }}</option>
-                    </select>
-                </div>
-
-                <div class="col">
-                    <label class="form-label" for="inputAddress">Salaire:</label>
-                    <input name="salary" type="text" class="form-control" id="inputAddress"
+                <div class="form-group col-5">
+                    <label class="form-label" for="inputRegion">Ecole:</label>
+                    <input name="school" type="text"  class="form-control" id="inputAddress"
                            placeholder=""
                            required>
+                </div>
+
+                <div class="col-4">
+                    <label class="form-label" for="inputAddress">Salaire des parents combinés:</label>
+                    <input name="parentsSalary" type="text" class="form-control" id="inputAddress"
+                           placeholder=""
+                           required>
+                </div>
+                <div class="col-3">
+                    <label class="form-label" for="inputAddress">Niveau d'étude:</label>
+                    <select name="level" class="form-select" aria-label="Default select example">
+                        <option v-for="level in levels" :value="level">{{ level }}</option>
+
+                    </select>
                 </div>
             </div>
             <br>
@@ -98,6 +105,12 @@
                     <input name="imagecin" type="file" class="form-control" id="image"
                            placeholder=""
                     required>
+                </div>
+                <div class="form-group col">
+                    <label class="form-label" for="fromFile">Pdf contenant les attestations de salaire des deux parents:</label>
+                    <input name="pdfsalaryattestation" type="file" class="form-control" id="image"
+                           placeholder=""
+                           required>
                 </div>
 
 
@@ -119,19 +132,10 @@ import axios from 'axios';
 export default {
     data: function () {
         return {
-            demande: {
-                firstname: "",
-                lastname: "",
-                cin: "",
-                phone: "",
-                address: "",
-                sexe: "",
-                city: "",
-                salary: 0,
-                profession: ""
-            },
+
             cities: ['Meknes', 'Casablance', 'Rabat', 'Tanger', 'Agadir', 'Fes'],
             professions: ['Plombier', 'Professeur', 'Sans emploi', 'Libre'],
+            levels:['bac','bac+1','bac+2','bac+3','bac+4','bac+5']
 
         }
     },
